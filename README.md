@@ -7,7 +7,7 @@ The simulator is built upon the [HPCC simulator](https://github.com/alibaba-edu/
 
 We implement the packet trimming mechanism and the logical RNIC functionality in this simulator. Hardware-specific logic, such as batched retransmission fetching and bitmap-free packet tracking, is not implemented here. Instead, these components are implemented on FPGA.
 
-In addition, we provide an MP-RDMA implementation (see the `mprdma` branch).
+In addition, we provide an [MP-RDMA](https://www.usenix.org/conference/nsdi18/presentation/lu) implementation (see the `mprdma` branch).
 
 # Quick start
 ## Run DCP
@@ -21,7 +21,7 @@ CC='gcc-5' CXX='g++-5' ./waf configure
 ./waf --run 'scratch/ring-allreduce exp/allreduce/config_allreduce.txt'
 ./waf --run 'scratch/alltoall exp/alltoall/config_alltoall.txt' 
 ```
-taking allreduce as an example, after the simulation finishes, you will find
+Taking allreduce as an example, after the simulation finishes, you will find
 `dcp_ar_allreduce.txt` and `dcp_ar_fct.txt` under the directory `simulation/exp/allreduce`.
 
 ### Output format of dcp_ar_allreduce.txt:
